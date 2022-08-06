@@ -1,0 +1,3 @@
+- client files (frontend) to be placed in client folder
+- server will need to be configured to serve your client files. This configuration will differ depending on what you're serving
+- consider authentication!

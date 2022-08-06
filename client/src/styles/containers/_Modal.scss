@@ -1,0 +1,21 @@
+.modal-container {
+  align-items: center;
+  animation: var(--animation-fade-in) forwards;
+  backdrop-filter: blur(5px) brightness(0.9);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  opacity: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+.modal {
+  animation: var(--animation-slide-in-up);
+  background-color: var(--surface-1);
+  border: 1px solid var(--text);
+  border-radius: var(--radius-2);
+  box-shadow: var(--shadow-2);
+  margin: 1rem;
+  padding: 1rem;
+}

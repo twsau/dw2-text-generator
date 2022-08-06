@@ -1,0 +1,45 @@
+@use "abstracts";
+@use "base";
+@use "containers";
+
+body {
+  background-color: var(--surface-1);
+  color: var(--text);
+}
+
+:where(header, article, footer) {
+  background-color: var(--surface-2);
+  border: 1px solid var(--text);
+  border-radius: 0 0 var(--radius-2) var(--radius-2);
+  box-shadow: var(--shadow-2);
+  margin: 0 1rem;
+  padding: 1rem;
+}
+
+header {
+  animation: var(--animation-slide-in-down);
+  border-top: none;
+}
+
+article {
+  animation: var(--animation-fade-in) forwards, var(--animation-slide-in-left);
+  border-radius: var(--radius-2);
+  min-height: 50vh;
+  margin: 1rem;
+  opacity: 0;
+
+  & > section {
+    margin: 1rem 0;
+  }
+}
+
+footer {
+  animation: var(--animation-slide-in-up);
+  border-bottom: none;
+  border-radius: var(--radius-2) var(--radius-2) 0 0;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  position: sticky;
+  top: 100vh;
+}
