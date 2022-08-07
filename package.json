@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon server/server.ts",
-    "build": "tsc-bundle ./tsconfig.json",
-    "test": "mocha -r ts-node/register server/**/*.spec.ts"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

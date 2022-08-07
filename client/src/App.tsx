@@ -19,12 +19,6 @@ const TextBox = styled.textarea`
   }
 `;
 
-const Row = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
-`;
-
 export const App = () => {
   const [input, setInput] = useState("");
   const [color, setColor] = useState("#000000");
@@ -60,41 +54,7 @@ export const App = () => {
           tabs={[
             {
               title: translate("Default"),
-              view: (
-                <>
-                  <Row>
-                    <label>{translate("colour")}</label>
-                    <input
-                      onChange={(event) => setColor(event.target.value)}
-                      type="color"
-                      value={color}
-                    />
-                    <label>{translate("size")}</label>
-                    <input
-                      max="50"
-                      min="1"
-                      onChange={(event) => setSize(event.target.value)}
-                      type="number"
-                      value={size}
-                    />
-                  </Row>
-                  <Row>
-                    <button
-                      disabled={input === ""}
-                      onClick={() => setInput("")}
-                    >
-                      {translate("clear")}
-                    </button>
-                    <button
-                      disabled={input === ""}
-                      onClick={generate}
-                      type="submit"
-                    >
-                      {translate("generate")}
-                    </button>
-                  </Row>
-                </>
-              ),
+              view: <Default />
             },
             {
               title: translate("Gradient"),
