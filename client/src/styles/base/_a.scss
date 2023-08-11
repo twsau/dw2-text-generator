@@ -1,9 +1,0 @@
-a {
-  color: var(--primary);
-  text-decoration: none;
-
-  &:where(:hover, :focus) {
-    filter: brightness(0.66);
-    text-decoration: underline;
-  }
-}
