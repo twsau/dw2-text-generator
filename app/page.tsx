@@ -32,7 +32,7 @@ export default function Home() {
   };
 
   return (
-    <main className="p-5 flex flex-col gap-5 justify-center h-full">
+    <main className="p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto">
       <InputArea onChange={setInput} value={input} />
       <Options
         onChange={(key, value) => setOptions({ ...options, [key]: value })}
