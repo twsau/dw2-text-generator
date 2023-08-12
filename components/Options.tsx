@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const Options: React.FC<Props> = ({ onChange, value }) => (
-  <div className="flex justify-center text-center gap-3 items-center">
+  <div className="flex justify-center text-center gap-3 items-center h-10">
     <Label htmlFor="colour">colour</Label>
     <Input
       id="colour"

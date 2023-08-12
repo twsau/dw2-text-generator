@@ -2,6 +2,7 @@ import { InputArea } from "@/components/InputArea";
 import { Options } from "@/components/Options";
 import { OutputArea } from "@/components/OutputArea";
 import { Button } from "@/components/ui/button";
+import { Spacer } from "@/components/ui/spacer";
 import { useToast } from "@/components/ui/use-toast";
 import { useEffect, useState } from "react";
 
