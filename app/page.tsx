@@ -1,47 +1,27 @@
 "use client";
 
-import { InputArea } from "@/components/InputArea";
-import { Options } from "@/components/Options";
-import { OutputArea } from "@/components/OutputArea";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
-import { useEffect, useState } from "react";
+import { AchievementFormatter } from "@/components/Formatter/Achievement";
+import { StandardFormatter } from "@/components/Formatter/Standard";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
-  const [input, setInput] = useState("");
-  const [options, setOptions] = useState({
-    colour: "black",
-    size: 16,
-  });
-  const [output, setOutput] = useState("");
-  const { toast } = useToast();
-
-  useEffect(() => {
-    setOutput(
-      !!input
-        ? `<size=${options.size}><color=${options.colour}>${input}</color></size>`
-        : ""
-    );
-  }, [input, options]);
-
-  const copy = () => {
-    navigator.clipboard.writeText(output);
-    toast({
-      description: "copied to clipboard!",
-    });
-  };
-
   return (
-    <main className="p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto">
-      <InputArea onChange={setInput} value={input} />
-      <Options
-        onChange={(key, value) => setOptions({ ...options, [key]: value })}
-        value={options}
-      />
-      <OutputArea value={output} />
-      <Button disabled={!output} variant="secondary" onClick={copy}>
-        COPY
-      </Button>
+    <main className="relative p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto">
+      <Tabs defaultValue="standard">
+        <div className="absolute top-20 left-1/2 -translate-x-1/2">
+          <h2 className="text-center mb-3">select formatter</h2>
+          <TabsList>
+            <TabsTrigger value="standard">STANDARD</TabsTrigger>
+            <TabsTrigger value="achievement">ACHIEVEMENT</TabsTrigger>
+          </TabsList>
+        </div>
+        <TabsContent value="standard">
+          <StandardFormatter />
+        </TabsContent>
+        <TabsContent value="achievement">
+          <AchievementFormatter />
+        </TabsContent>
+      </Tabs>
     </main>
   );
 }
