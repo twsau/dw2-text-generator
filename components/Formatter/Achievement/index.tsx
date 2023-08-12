@@ -42,7 +42,7 @@ export const AchievementFormatter = () => {
         }
         variant="secondary"
         onClick={() => {
-          saveMessage(output, "standard");
+          saveMessage(output, "achievement");
           toast({
             description: "message saved!",
           });
