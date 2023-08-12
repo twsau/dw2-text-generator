@@ -10,7 +10,7 @@ export const OutputArea: React.FC<Props> = ({ value }) => {
       className="resize-none focus-visible:outline-none focus-visible:ring-0"
       placeholder="output"
       readOnly
-      rows={4}
+      rows={5}
       value={value}
     />
   );

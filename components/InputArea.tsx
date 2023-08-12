@@ -11,7 +11,7 @@ export const InputArea: React.FC<Props> = ({ onChange, value }) => {
       className="resize-none"
       onChange={(e) => onChange(e.target.value)}
       placeholder="your text here"
-      rows={4}
+      rows={5}
       value={value}
     />
   );
