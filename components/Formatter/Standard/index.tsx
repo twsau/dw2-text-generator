@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export const StandardFormatter = () => {
   const [input, setInput] = useState("");
   const [options, setOptions] = useState({
-    colour: "black",
+    colour: "#666666",
     size: 16,
   });
   const [output, setOutput] = useState("");
