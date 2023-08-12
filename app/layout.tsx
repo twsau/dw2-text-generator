@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html className="h-full" lang="en">
       <body className={cn(inter.className, "h-full dark")}>
-        <header className="fixed w-full border-b p-5 flex justify-between gap-3">
+        <header className="fixed w-full border-b p-5 flex justify-between gap-3 h-20 items-center">
           <NavLink href="/" text="create" />
           <NavLink href="/saved" text="saved" />
           <div className="ml-auto flex gap-3">
@@ -41,9 +41,7 @@ export default function RootLayout({
             </a>
           </div>
         </header>
-        <main className="relative p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto">
-          {children}
-        </main>
+        <main className="max-w-lg mx-auto relative top-24">{children}</main>
         <Toaster />
         <ZustandHydrate />
       </body>

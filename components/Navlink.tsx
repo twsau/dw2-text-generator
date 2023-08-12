@@ -15,10 +15,7 @@ export const NavLink: React.FC<Props> = ({ href, text }) => {
 
   return (
     <Link
-      className={cn(
-        current && "bg-accent",
-        "px-3 py-1 rounded flex items-center"
-      )}
+      className={cn(current && "bg-accent", "p-3 rounded flex items-center")}
       href={href}
     >
       {text}
