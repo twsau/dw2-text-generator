@@ -1,3 +1,5 @@
+"use client";
+
 import { InputArea } from "@/components/InputArea";
 import { OutputArea } from "@/components/OutputArea";
 import { Button } from "@/components/ui/button";

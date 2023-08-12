@@ -1,3 +1,5 @@
+"use client";
+
 import { InputArea } from "@/components/InputArea";
 import { Options } from "@/components/Options";
 import { OutputArea } from "@/components/OutputArea";

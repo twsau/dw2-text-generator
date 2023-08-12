@@ -1,5 +1,3 @@
-"use client";
-
 import { AchievementFormatter } from "@/components/Formatter/Achievement";
 import { StandardFormatter } from "@/components/Formatter/Standard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
