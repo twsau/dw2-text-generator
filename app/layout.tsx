@@ -41,7 +41,7 @@ export default function RootLayout({
             </a>
           </div>
         </header>
-        <main className="max-w-lg mx-auto relative top-24">{children}</main>
+        <main className="max-w-lg mx-auto relative top-24 p-3">{children}</main>
         <Toaster />
         <ZustandHydrate />
       </body>
