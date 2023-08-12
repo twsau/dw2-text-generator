@@ -1,6 +1,6 @@
-import { randomUUID } from "crypto";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import { v4 as uuid } from "uuid";
 
 export const useMessages = create<Messages>()(
   persist(
@@ -17,7 +17,7 @@ export const useMessages = create<Messages>()(
 
 export const saveMessage = (message: string, type: keyof Messages) =>
   useMessages.setState((state) => ({
-    [type]: [...state[type], { id: randomUUID(), string: message }],
+    [type]: [...state[type], { id: uuid(), string: message }],
   }));
 
 export const deleteMessage = (id: string, type: keyof Messages) =>

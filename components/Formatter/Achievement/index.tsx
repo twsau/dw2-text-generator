@@ -5,6 +5,7 @@ import { OutputArea } from "@/components/OutputArea";
 import { Button } from "@/components/ui/button";
 import { Spacer } from "@/components/ui/spacer";
 import { useToast } from "@/components/ui/use-toast";
+import { saveMessage } from "@/state/messages";
 import { useEffect, useState } from "react";
 
 export const AchievementFormatter = () => {
@@ -29,7 +30,14 @@ export const AchievementFormatter = () => {
       <Spacer />
       <OutputArea value={output} />
       <Button disabled={!output} variant="secondary" onClick={copy}>
-        COPY
+        copy
+      </Button>
+      <Button
+        disabled={!output}
+        variant="secondary"
+        onClick={() => saveMessage(output, "standard")}
+      >
+        save
       </Button>
     </div>
   );
