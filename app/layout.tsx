@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { ZustandHydrate } from "@/state/ZustandHydrate";
+import { NavLink } from "@/components/Navlink";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,8 +21,9 @@ export default function RootLayout({
   return (
     <html className="h-full" lang="en">
       <body className={cn(inter.className, "h-full dark")}>
-        <header className="fixed w-full border-b p-5 flex justify-between">
-          <h1>dw2-text-generator</h1>
+        <header className="fixed w-full border-b p-5 flex justify-between gap-3">
+          <NavLink href="/" text="create" />
+          <NavLink href="/saved" text="saved" />
           <div className="ml-auto flex gap-3">
             <a
               className="hover:underline"
@@ -39,7 +41,9 @@ export default function RootLayout({
             </a>
           </div>
         </header>
-        {children}
+        <main className="relative p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto">
+          {children}
+        </main>
         <Toaster />
         <ZustandHydrate />
       </body>
