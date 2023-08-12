@@ -14,8 +14,6 @@ export const SavedMessages: React.FC<Props> = ({ type }) => {
   const messages = useMessages()[type];
   const { toast } = useToast();
 
-  console.log({ messages });
-
   return (
     <div className="flex flex-col items-center py-5 gap-3">
       {messages.map((message) => (
