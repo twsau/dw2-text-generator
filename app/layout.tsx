@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
+import { ZustandHydrate } from "@/state/ZustandHydrate";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +41,7 @@ export default function RootLayout({
         </header>
         {children}
         <Toaster />
+        <ZustandHydrate />
       </body>
     </html>
   );
