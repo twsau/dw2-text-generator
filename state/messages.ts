@@ -9,7 +9,7 @@ export const useMessages = create<Messages>()(
       achievement: [],
     }),
     {
-      name: "app-state",
+      name: "dw2-messages",
       skipHydration: true,
     }
   )
@@ -20,7 +20,9 @@ export const saveMessage = (message: string, type: keyof Messages) =>
     [type]: [...state[type], { id: uuid(), string: message }],
   }));
 
-export const deleteMessage = (id: string, type: keyof Messages) =>
+export const deleteMessage = (id: string, type: keyof Messages) => {
+  console.log(id, type);
   useMessages.setState((state) => ({
-    [type]: state[type].filter((message) => message.id === id),
+    [type]: state[type].filter((message) => message.id !== id),
   }));
+};

@@ -5,6 +5,7 @@ import { Options } from "@/components/Options";
 import { OutputArea } from "@/components/OutputArea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
+import { copy } from "@/lib/utils";
 import { saveMessage, useMessages } from "@/state/messages";
 import { useEffect, useState } from "react";
 
@@ -19,26 +20,11 @@ export const StandardFormatter = () => {
   const { standard: messages } = useMessages();
 
   useEffect(() => {
+    if (!input) return;
     setOutput(
-      !!input
-        ? `<size=${options.size}><color=${options.colour}>${input}</color></size>`
-        : ""
+      `<size=${options.size}><color=${options.colour}>${input}</color></size>`
     );
   }, [input, options]);
-
-  const copy = () => {
-    navigator.clipboard.writeText(output);
-    toast({
-      description: "copied to clipboard!",
-    });
-  };
-
-  const save = () => {
-    saveMessage(output, "standard");
-    toast({
-      description: "message saved!",
-    });
-  };
 
   return (
     <div className="p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto">
@@ -48,7 +34,16 @@ export const StandardFormatter = () => {
         value={options}
       />
       <OutputArea value={output} />
-      <Button disabled={!output} variant="secondary" onClick={copy}>
+      <Button
+        disabled={!output}
+        variant="secondary"
+        onClick={() => {
+          copy(output);
+          toast({
+            description: "copied to clipboard!",
+          });
+        }}
+      >
         copy
       </Button>
       <Button
@@ -56,7 +51,12 @@ export const StandardFormatter = () => {
           !output || !!messages.find((message) => message.string === output)
         }
         variant="secondary"
-        onClick={save}
+        onClick={() => {
+          saveMessage(output, "standard");
+          toast({
+            description: "message saved!",
+          });
+        }}
       >
         save
       </Button>
