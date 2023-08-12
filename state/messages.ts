@@ -2,16 +2,6 @@ import { randomUUID } from "crypto";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface Message {
-  id: string;
-  string: string;
-}
-
-interface Messages {
-  standard: Message[];
-  achievement: Message[];
-}
-
 export const useMessages = create<Messages>()(
   persist(
     (set) => ({

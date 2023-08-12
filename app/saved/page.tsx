@@ -1,4 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SavedMessages } from "./Messages";
 
 export default function Saved() {
   return (
@@ -10,8 +11,12 @@ export default function Saved() {
           <TabsTrigger value="achievement">achievement</TabsTrigger>
         </TabsList>
       </div>
-      <TabsContent value="standard">standard messages</TabsContent>
-      <TabsContent value="achievement">achievement messages</TabsContent>
+      <TabsContent value="standard">
+        <SavedMessages type="standard" />
+      </TabsContent>
+      <TabsContent value="achievement">
+        <SavedMessages type="achievement" />
+      </TabsContent>
     </Tabs>
   );
 }
