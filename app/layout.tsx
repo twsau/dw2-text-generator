@@ -20,7 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html className="h-full" lang="en">
-      <body className={cn(inter.className, "h-full")}>
+      <body
+        className={cn(
+          inter.className,
+          "h-full bg-gradient-to-b from-primary-foreground to-background"
+        )}
+      >
         <Header />
         <main className="max-w-lg mx-auto relative top-24 p-3">{children}</main>
         <Toaster />
