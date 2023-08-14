@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html className="h-full" lang="en">
-      <body className={cn(inter.className, "h-full dark")}>
+      <body className={cn(inter.className, "h-full")}>
         <Header />
         <main className="max-w-lg mx-auto relative top-24 p-3">{children}</main>
         <Toaster />
