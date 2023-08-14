@@ -7,6 +7,7 @@ export const useMessages = create<Messages>()(
     (set) => ({
       standard: [],
       achievement: [],
+      rainbow: [],
     }),
     {
       name: "dw2-messages",
