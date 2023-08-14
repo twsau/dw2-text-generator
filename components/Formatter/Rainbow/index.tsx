@@ -5,9 +5,10 @@ import { OutputArea } from "@/components/OutputArea";
 import { useEffect, useState } from "react";
 import { CopyButton } from "../CopyButton";
 import { formatRainbow } from "./format";
-import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
+
 import { SaveButton } from "../SaveButton";
+import { Size } from "@/components/Controls/Size";
+import { OptionsCard } from "@/components/OptionsCard";
 
 export const RainbowFormatter = () => {
   const [input, setInput] = useState("");
@@ -21,14 +22,9 @@ export const RainbowFormatter = () => {
   return (
     <>
       <InputArea onChange={setInput} value={input} />
-      <Label htmlFor="size">size</Label>
-      <Slider
-        id="size"
-        max={50}
-        min={10}
-        onValueChange={(val) => setSize(val[0])}
-        value={[size]}
-      />
+      <OptionsCard>
+        <Size onChange={setSize} value={size} />
+      </OptionsCard>
       <OutputArea value={output} />
       <CopyButton text={output} />
       <SaveButton formatter="rainbow" text={output} />

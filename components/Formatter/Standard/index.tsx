@@ -1,54 +1,35 @@
 "use client";
 
 import { InputArea } from "@/components/InputArea";
-import { Options } from "@/components/Options";
 import { OutputArea } from "@/components/OutputArea";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
-import { saveMessage, useMessages } from "@/state/messages";
 import { useEffect, useState } from "react";
 import { CopyButton } from "../CopyButton";
+import { SaveButton } from "../SaveButton";
+import { Size } from "@/components/Controls/Size";
+import { Colour } from "@/components/Controls/Colour";
+import { OptionsCard } from "@/components/OptionsCard";
 
 export const StandardFormatter = () => {
   const [input, setInput] = useState("");
-  const [options, setOptions] = useState({
-    colour: "#666666",
-    size: 16,
-  });
   const [output, setOutput] = useState("");
-  const { toast } = useToast();
-  const { standard: messages } = useMessages();
+  const [size, setSize] = useState(16);
+  const [colour, setColour] = useState("#666666");
 
   useEffect(() => {
     if (!input) return;
-    setOutput(
-      `<size=${options.size}><color=${options.colour}>${input}</color></size>`
-    );
-  }, [input, options]);
+    setOutput(`<size=${size}><color=${colour}>${input}</color></size>`);
+  }, [colour, input, size]);
 
   return (
     <>
       <InputArea onChange={setInput} value={input} />
-      <Options
-        onChange={(key, value) => setOptions({ ...options, [key]: value })}
-        value={options}
-      />
+      <OptionsCard>
+        <Size onChange={setSize} value={size} />
+        <Colour onChange={setColour} value={colour} />
+      </OptionsCard>
       <OutputArea value={output} />
       <CopyButton text={output} />
-      <Button
-        disabled={
-          !output || !!messages.find((message) => message.string === output)
-        }
-        variant="secondary"
-        onClick={() => {
-          saveMessage(output, "standard");
-          toast({
-            description: "message saved!",
-          });
-        }}
-      >
-        save
-      </Button>
+      <SaveButton formatter="standard" text={output} />
     </>
   );
 };

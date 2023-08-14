@@ -3,7 +3,6 @@
 import { InputArea } from "@/components/InputArea";
 import { OutputArea } from "@/components/OutputArea";
 import { Button } from "@/components/ui/button";
-import { Spacer } from "@/components/ui/spacer";
 import { useToast } from "@/components/ui/use-toast";
 import { saveMessage, useMessages } from "@/state/messages";
 import { useEffect, useState } from "react";
@@ -22,7 +21,6 @@ export const AchievementFormatter = () => {
   return (
     <>
       <InputArea onChange={setInput} value={input} />
-      <Spacer />
       <OutputArea value={output} />
       <CopyButton text={output} />
       <Button
