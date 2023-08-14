@@ -8,6 +8,7 @@ import { SaveButton } from "../SaveButton";
 import { Size } from "@/components/Controls/Size";
 import { Colour } from "@/components/Controls/Colour";
 import { OptionsCard } from "@/components/OptionsCard";
+import { formatStandard } from "./format";
 
 export const StandardFormatter = () => {
   const [input, setInput] = useState("");
@@ -15,10 +16,10 @@ export const StandardFormatter = () => {
   const [size, setSize] = useState(16);
   const [colour, setColour] = useState("#666666");
 
-  useEffect(() => {
-    if (!input) return;
-    setOutput(`<size=${size}><color=${colour}>${input}</color></size>`);
-  }, [colour, input, size]);
+  useEffect(
+    () => setOutput(formatStandard({ colour, size, input })),
+    [colour, input, size]
+  );
 
   return (
     <>

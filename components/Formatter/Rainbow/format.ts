@@ -8,11 +8,18 @@ const rainbow = [
   "#9400D3", // Violet
 ];
 
-export const formatRainbow = (text: string) =>
-  text
-    .split("")
-    .map(
-      (letter, index) =>
-        `<color=${rainbow[index % rainbow.length]}>${letter}</color>`
-    )
-    .join("");
+interface Props {
+  input: string;
+  size: number;
+}
+
+export const formatRainbow = ({ input, size }: Props) =>
+  !!input
+    ? `<size=${size}>${input
+        .split("")
+        .map(
+          (letter, index) =>
+            `<color=${rainbow[index % rainbow.length]}>${letter}</color>`
+        )
+        .join("")}</size>`
+    : "";

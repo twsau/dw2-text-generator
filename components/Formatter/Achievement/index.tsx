@@ -7,6 +7,7 @@ import { useToast } from "@/components/ui/use-toast";
 import { saveMessage, useMessages } from "@/state/messages";
 import { useEffect, useState } from "react";
 import { CopyButton } from "../CopyButton";
+import { formatAchievement } from "./format";
 
 export const AchievementFormatter = () => {
   const [input, setInput] = useState("");
@@ -14,9 +15,7 @@ export const AchievementFormatter = () => {
   const { toast } = useToast();
   const { standard: messages } = useMessages();
 
-  useEffect(() => {
-    setOutput(!!input ? `unlocked "<b>${input}</b>" achievement!` : "");
-  }, [input]);
+  useEffect(() => setOutput(formatAchievement({ input })), [input]);
 
   return (
     <>

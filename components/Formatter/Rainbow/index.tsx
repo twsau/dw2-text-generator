@@ -15,9 +15,7 @@ export const RainbowFormatter = () => {
   const [output, setOutput] = useState("");
   const [size, setSize] = useState(16);
 
-  useEffect(() => {
-    setOutput(input ? `<size=${size}>${formatRainbow(input)}</size>` : "");
-  }, [input, size]);
+  useEffect(() => setOutput(formatRainbow({ input, size })), [input, size]);
 
   return (
     <>
