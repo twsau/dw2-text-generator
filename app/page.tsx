@@ -9,7 +9,6 @@ export default function Home() {
   return (
     <Tabs defaultValue="standard">
       <div className="flex flex-col items-center">
-        <h2 className="text-center mb-3">formatter</h2>
         <TabsList>
           <TabsTrigger value="standard">standard</TabsTrigger>
           <TabsTrigger value="achievement">achievement</TabsTrigger>

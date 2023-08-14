@@ -7,7 +7,6 @@ export default function Saved() {
   return (
     <Tabs defaultValue="standard">
       <div className="flex flex-col items-center">
-        <h2 className="text-center mb-3">message type</h2>
         <TabsList>
           {formatters.map((type) => (
             <TabsTrigger key={`${type}-trigger`} value={type}>
