@@ -3,7 +3,4 @@ interface Message {
   string: string;
 }
 
-interface Messages {
-  standard: Message[];
-  achievement: Message[];
-}
+type Messages = Record<Formatter, Message[]>;

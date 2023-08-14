@@ -5,9 +5,9 @@ import { Options } from "@/components/Options";
 import { OutputArea } from "@/components/OutputArea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { copy } from "@/lib/utils";
 import { saveMessage, useMessages } from "@/state/messages";
 import { useEffect, useState } from "react";
+import { CopyButton } from "../CopyButton";
 
 export const StandardFormatter = () => {
   const [input, setInput] = useState("");
@@ -27,25 +27,14 @@ export const StandardFormatter = () => {
   }, [input, options]);
 
   return (
-    <div className="p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto">
+    <>
       <InputArea onChange={setInput} value={input} />
       <Options
         onChange={(key, value) => setOptions({ ...options, [key]: value })}
         value={options}
       />
       <OutputArea value={output} />
-      <Button
-        disabled={!output}
-        variant="secondary"
-        onClick={() => {
-          copy(output);
-          toast({
-            description: "copied to clipboard!",
-          });
-        }}
-      >
-        copy
-      </Button>
+      <CopyButton text={output} />
       <Button
         disabled={
           !output || !!messages.find((message) => message.string === output)
@@ -60,6 +49,6 @@ export const StandardFormatter = () => {
       >
         save
       </Button>
-    </div>
+    </>
   );
 };
