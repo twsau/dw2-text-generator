@@ -21,9 +21,7 @@ export const saveMessage = (message: string, type: keyof Messages) =>
     [type]: [...state[type], { id: uuid(), string: message }],
   }));
 
-export const deleteMessage = (id: string, type: keyof Messages) => {
-  console.log(id, type);
+export const deleteMessage = (id: string, type: keyof Messages) =>
   useMessages.setState((state) => ({
     [type]: state[type].filter((message) => message.id !== id),
   }));
-};
