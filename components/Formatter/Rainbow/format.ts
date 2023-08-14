@@ -15,4 +15,4 @@ export const formatRainbow = (text: string) =>
       (letter, index) =>
         `<color=${rainbow[index % rainbow.length]}>${letter}</color>`
     )
-    .join();
+    .join("");
