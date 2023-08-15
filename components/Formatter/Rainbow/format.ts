@@ -17,9 +17,10 @@ export const formatRainbow = ({ input, size }: Props) =>
   !!input
     ? `<size=${size}>${input
         .split("")
-        .map(
-          (letter, index) =>
-            `<color=${rainbow[index % rainbow.length]}>${letter}</color>`
+        .map((char, index) =>
+          char === " "
+            ? char
+            : `<color=${rainbow[index % rainbow.length]}>${char}</color>`
         )
         .join("")}</size>`
     : "";
