@@ -8,7 +8,7 @@ interface Props {
   text: string;
 }
 
-export const SaveButton: React.FC<Props> = ({ formatter, text }) => {
+export const Save: React.FC<Props> = ({ formatter, text }) => {
   const messages = useMessages()[formatter];
   const { toast } = useToast();
 

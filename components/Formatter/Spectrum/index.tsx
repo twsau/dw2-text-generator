@@ -3,12 +3,13 @@
 import { InputArea } from "@/components/InputArea";
 import { OutputArea } from "@/components/OutputArea";
 import { useEffect, useState } from "react";
-import { CopyButton } from "../CopyButton";
-import { SaveButton } from "../SaveButton";
+import { Copy } from "../../Actions/Copy";
+import { Save } from "../../Actions/Save";
 import { OptionsCard } from "@/components/OptionsCard";
 import { Size } from "@/components/Controls/Size";
 import { Colour } from "@/components/Controls/Colour";
 import { formatSpectrum } from "./format";
+import { Preview } from "@/components/Actions/Preview";
 
 export const Spectrum = () => {
   const [input, setInput] = useState("");
@@ -31,8 +32,9 @@ export const Spectrum = () => {
         <Colour label="to" onChange={setTo} value={to} />
       </OptionsCard>
       <OutputArea value={output} />
-      <CopyButton text={output} />
-      <SaveButton formatter="standard" text={output} />
+      <Copy text={output} />
+      <Save formatter="standard" text={output} />
+      <Preview text={output} />
     </>
   );
 };

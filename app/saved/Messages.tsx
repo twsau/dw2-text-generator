@@ -1,6 +1,6 @@
 "use client";
 
-import { CopyButton } from "@/components/Formatter/CopyButton";
+import { Copy } from "@/components/Actions/Copy";
 import { Button } from "@/components/ui/button";
 import { deleteMessage, useMessages } from "@/state/messages";
 import { TrashIcon } from "@radix-ui/react-icons";
@@ -17,7 +17,7 @@ export const SavedMessages: React.FC<Props> = ({ type }) => {
       {messages.map((message) => (
         <div className="flex items-center gap-3 w-full" key={message.id}>
           <small className="mr-auto">{message.string}</small>
-          <CopyButton text={message.string} />
+          <Copy text={message.string} />
           <Button
             onClick={() => deleteMessage(message.id, type)}
             variant="destructive"

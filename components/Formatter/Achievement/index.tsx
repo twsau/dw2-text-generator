@@ -3,9 +3,10 @@
 import { InputArea } from "@/components/InputArea";
 import { OutputArea } from "@/components/OutputArea";
 import { useEffect, useState } from "react";
-import { CopyButton } from "../CopyButton";
+import { Copy } from "../../Actions/Copy";
 import { formatAchievement } from "./format";
-import { SaveButton } from "../SaveButton";
+import { Save } from "../../Actions/Save";
+import { Preview } from "@/components/Actions/Preview";
 
 export const Achievement = () => {
   const [input, setInput] = useState("");
@@ -17,8 +18,9 @@ export const Achievement = () => {
     <>
       <InputArea onChange={setInput} value={input} />
       <OutputArea value={output} />
-      <CopyButton text={output} />
-      <SaveButton formatter="achievement" text={output} />
+      <Copy text={output} />
+      <Save formatter="achievement" text={output} />
+      <Preview text={output} />
     </>
   );
 };

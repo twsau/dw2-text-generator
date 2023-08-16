@@ -10,7 +10,7 @@ interface Props {
   text: string;
 }
 
-export const CopyButton: React.FC<Props> = ({ text }) => {
+export const Copy: React.FC<Props> = ({ text }) => {
   const { toast } = useToast();
 
   const notification = () =>

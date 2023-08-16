@@ -3,13 +3,13 @@
 import { InputArea } from "@/components/InputArea";
 import { OutputArea } from "@/components/OutputArea";
 import { useEffect, useState } from "react";
-import { CopyButton } from "../CopyButton";
-import { SaveButton } from "../SaveButton";
+import { Copy } from "../../Actions/Copy";
+import { Save } from "../../Actions/Save";
 import { Size } from "@/components/Controls/Size";
 import { Colour } from "@/components/Controls/Colour";
 import { OptionsCard } from "@/components/OptionsCard";
 import { formatStandard } from "./format";
-import { Preview } from "@/components/Preview";
+import { Preview } from "@/components/Actions/Preview";
 
 export const Standard = () => {
   const [input, setInput] = useState("");
@@ -30,8 +30,8 @@ export const Standard = () => {
         <Colour onChange={setColour} value={colour} />
       </OptionsCard>
       <OutputArea value={output} />
-      <CopyButton text={output} />
-      <SaveButton formatter="standard" text={output} />
+      <Copy text={output} />
+      <Save formatter="standard" text={output} />
       <Preview text={output} />
     </>
   );
