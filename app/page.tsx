@@ -6,11 +6,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   const tabCn =
-    "p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto";
+    "p-5 flex flex-col gap-5 justify-center h-full max-w-lg mx-auto md:pt-24";
   return (
-    <Tabs defaultValue="standard">
+    <Tabs className="h-full" defaultValue="standard">
       <div className="flex flex-col items-center">
-        <TabsList>
+        <TabsList className="rounded-t-none shadow">
           <TabsTrigger value="standard">standard</TabsTrigger>
           <TabsTrigger value="achievement">achievement</TabsTrigger>
           <TabsTrigger value="rainbow">rainbow</TabsTrigger>

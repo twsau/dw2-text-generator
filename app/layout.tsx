@@ -27,7 +27,9 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main className="max-w-lg mx-auto relative top-24 p-3">{children}</main>
+        <main className="max-w-lg mx-auto relative top-16 p-3 py-0">
+          {children}
+        </main>
         <Toaster />
         <ZustandHydrate />
       </body>
