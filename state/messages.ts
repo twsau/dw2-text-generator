@@ -8,6 +8,7 @@ export const useMessages = create<Messages>()(
       standard: [],
       achievement: [],
       rainbow: [],
+      spectrum: [],
     }),
     {
       name: "dw2-messages",

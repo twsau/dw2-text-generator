@@ -1,7 +1,12 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SavedMessages } from "./Messages";
 
-const formatters: Formatter[] = ["standard", "achievement", "rainbow"];
+const formatters: Formatter[] = [
+  "standard",
+  "achievement",
+  "rainbow",
+  "spectrum",
+];
 
 export default function Saved() {
   return (
