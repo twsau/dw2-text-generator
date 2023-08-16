@@ -10,7 +10,7 @@ import { Colour } from "@/components/Controls/Colour";
 import { OptionsCard } from "@/components/OptionsCard";
 import { formatStandard } from "./format";
 
-export const StandardFormatter = () => {
+export const Standard = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [size, setSize] = useState(16);

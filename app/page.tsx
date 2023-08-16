@@ -1,7 +1,7 @@
-import { AchievementFormatter } from "@/components/Formatter/Achievement";
-import { RainbowFormatter } from "@/components/Formatter/Rainbow";
+import { Achievement } from "@/components/Formatter/Achievement";
+import { Rainbow } from "@/components/Formatter/Rainbow";
 import { Spectrum } from "@/components/Formatter/Spectrum";
-import { StandardFormatter } from "@/components/Formatter/Standard";
+import { Standard } from "@/components/Formatter/Standard";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
@@ -20,17 +20,17 @@ export default function Home() {
 
       <TabsContent value="standard">
         <div className={tabCn}>
-          <StandardFormatter />
+          <Standard />
         </div>
       </TabsContent>
       <TabsContent value="achievement">
         <div className={tabCn}>
-          <AchievementFormatter />
+          <Achievement />
         </div>
       </TabsContent>
       <TabsContent value="rainbow">
         <div className={tabCn}>
-          <RainbowFormatter />
+          <Rainbow />
         </div>
       </TabsContent>
       <TabsContent value="spectrum">

@@ -7,7 +7,7 @@ import { CopyButton } from "../CopyButton";
 import { formatAchievement } from "./format";
 import { SaveButton } from "../SaveButton";
 
-export const AchievementFormatter = () => {
+export const Achievement = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
 

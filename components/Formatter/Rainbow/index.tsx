@@ -10,7 +10,7 @@ import { SaveButton } from "../SaveButton";
 import { Size } from "@/components/Controls/Size";
 import { OptionsCard } from "@/components/OptionsCard";
 
-export const RainbowFormatter = () => {
+export const Rainbow = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [size, setSize] = useState(16);
