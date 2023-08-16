@@ -14,8 +14,8 @@ export const Spectrum = () => {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [size, setSize] = useState(16);
-  const [from, setFrom] = useState("#666666");
-  const [to, setTo] = useState("#666666");
+  const [from, setFrom] = useState("#8fcfdd");
+  const [to, setTo] = useState("#db8cd7");
 
   useEffect(
     () => setOutput(formatSpectrum({ from, input, size, to })),
