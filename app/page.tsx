@@ -17,7 +17,6 @@ export default function Home() {
           <TabsTrigger value="spectrum">spectrum</TabsTrigger>
         </TabsList>
       </div>
-
       <TabsContent value="standard">
         <div className={tabCn}>
           <Standard />

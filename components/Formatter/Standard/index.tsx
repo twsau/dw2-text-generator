@@ -9,6 +9,7 @@ import { Size } from "@/components/Controls/Size";
 import { Colour } from "@/components/Controls/Colour";
 import { OptionsCard } from "@/components/OptionsCard";
 import { formatStandard } from "./format";
+import { Preview } from "@/components/Preview";
 
 export const Standard = () => {
   const [input, setInput] = useState("");
@@ -31,6 +32,7 @@ export const Standard = () => {
       <OutputArea value={output} />
       <CopyButton text={output} />
       <SaveButton formatter="standard" text={output} />
+      <Preview text={output} />
     </>
   );
 };
