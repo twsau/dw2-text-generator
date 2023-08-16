@@ -1,1 +1,1 @@
-type Formatter = "standard" | "achievement" | "rainbow";
+type Formatter = "standard" | "achievement" | "rainbow" | "spectrum";
